@@ -28,7 +28,7 @@ else
 exit
 fi
 echo -e $cyan                      "INSTALLING DEPENDENCIES...."
-sleep2.0
+sleep 2.0
 echo -e $cyan                  "PLEASE WAIT IT WILL TAKE SOME TIME...."
 apt upgrade -y > /dev/null 2>&1
 apt update -y > /dev/null 2>&1
