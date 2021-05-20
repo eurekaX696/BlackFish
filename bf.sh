@@ -1,23 +1,23 @@
 clear
 echo ""
 echo '
-                           ____  __     __    ___  __ _  ____  __  ____  _  _ 
-                          (  _ \(  )   / _\  / __)(  / )(  __)(  )/ ___)/ )( \
-                           ) _ (/ (_/\/    \( (__  )  (  ) _)  )( \___ \) __ (
-                          (____/\____/\_/\_/ \___)(__\_)(__)  (__)(____/\_)(_/
+                    ____  __     __    ___  __ _  ____  __  ____  _  _ 
+                   (  _ \(  )   / _\  / __)(  / )(  __)(  )/ ___)/ )( \
+                    ) _ (/ (_/\/    \( (__  )  (  ) _)  )( \___ \) __ (
+                   (____/\____/\_/\_/ \___)(__\_)(__)  (__)(____/\_)(_/
 ' |lolcat
 echo ""
-echo -e "                       \e[92m TOOL BY NOOB Hacker wasii\e[0m"
-echo -e $read               "WE ARE NOT RESPONSIBLE FOR ANY ILLEGAL ACTIVITY"
+echo -e "                 \e[92m TOOL BY Hacker wasii\e[0m"
+echo -e $read          "WE ARE NOT RESPONSIBLE FOR ANY ILLEGAL ACTIVITY"
 echo ""
-echo -e "\e[96m                  [\e[92m1\e[96m]==> START BlackFish "
-echo -e "\e[96m                  [\e[92m2\e[96m]==> SEE LOGS "
-echo -e "\e[96m                  [\e[92m3\e[96m]==> ABOUT "
-echo -e "\e[96m                  [\e[92m4\e[96m]==> UPDATE "
-echo -e "\e[96m                  [\e[92m5\e[96m]==> EXIT "
-echo -e "\e[96m                  [\e[92m6\e[96m]==> SUBSCRIBE "
-echo -e "\e[96m                  [\e[92m7\e[96m]==> CHECK SPEED "
-echo -e "\e[96m                  [\e[92m8\e[96m]==> CHAT NOW "
+echo -e "\e[96m           [\e[92m1\e[96m]==> START BlackFish "
+echo -e "\e[96m           [\e[92m2\e[96m]==> SEE LOGS "
+echo -e "\e[96m           [\e[92m3\e[96m]==> ABOUT "
+echo -e "\e[96m           [\e[92m4\e[96m]==> UPDATE "
+echo -e "\e[96m           [\e[92m5\e[96m]==> EXIT "
+echo -e "\e[96m           [\e[92m6\e[96m]==> SUBSCRIBE "
+echo -e "\e[96m           [\e[92m7\e[96m]==> CHECK SPEED "
+echo -e "\e[96m           [\e[92m8\e[96m]==> CHAT NOW "
 read -p $'\n\e[1;96m[\e[0m\e[1;92m+\e[0m\e[1;96m] BLACKFISH : \e[0m' option
 if [[ $option == 1 || $option == 01 ]]; then
 echo
